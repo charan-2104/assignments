@@ -5,6 +5,7 @@ const zod = require('zod')
 const emailSchema = zod.string().email()
 const passwordSchema = zod.string().min(6)
 
+
 /**
  * Generates a JWT for a given username and password.
  *

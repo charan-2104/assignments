@@ -25,6 +25,7 @@ const CourseSchema = new mongoose.Schema({
     imageLink: String,
 });
 
+
 const Admin = mongoose.model('Admin', AdminSchema);
 const User = mongoose.model('User', UserSchema);
 const Course = mongoose.model('Course', CourseSchema);
