@@ -17,6 +17,7 @@ app.use(countMiddleware);
 // maintain a count of the number of requests made to the server in the global
 // requestCount variable
 
+
 app.get('/user', function(req, res) {
   res.status(200).json({ name: 'john' });
 });
