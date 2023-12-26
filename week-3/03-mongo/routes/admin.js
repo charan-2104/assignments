@@ -5,7 +5,7 @@ const { Course } = require("../db");
 const router = Router();
 
 // Admin Routes
-app.post('/signup', (req, res) => {
+router.post('/signup', (req, res) => {
     // Implement admin signup logic
     Admin.create({
         username: req.body.username,
@@ -16,7 +16,7 @@ app.post('/signup', (req, res) => {
     })
 });
 
-app.post('/courses', adminMiddleware, (req, res) => {
+router.post('/courses', adminMiddleware, (req, res) => {
     // Implement course creation logic
     Course.create({
          title: req.body.title,
@@ -33,7 +33,7 @@ app.post('/courses', adminMiddleware, (req, res) => {
     })
 });
 
-app.get('/courses', adminMiddleware, (req, res) => {
+router.get('/courses', adminMiddleware, (req, res) => {
     // Implement fetching all courses logic
     
     res.json({
