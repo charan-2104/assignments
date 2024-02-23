@@ -28,6 +28,20 @@
       const added = [];
       const deleted = [];
       const updated = [];
+
+      newTodos.forEach((newTodo)=>{
+        const found = oldTodoState.find(oldTodo => oldTodo.id === newTodo.id)
+        if(!found){
+          added.push(newTodo)
+        }
+      })
+
+      newTodos.forEach((oldTodo)=>{
+        const found = newTodos.find(newTodo => newTodo.id === oldTodo.id)
+        if(!found){
+          deleted.push(oldTodo)
+        }
+      })
       // calculate these 3 arrays
       // call addTodo, removeTodo, updateTodo functions on each of the
       // elements
